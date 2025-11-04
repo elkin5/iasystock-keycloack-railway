@@ -2,6 +2,8 @@
 
 Este repositorio prepara una imagen de Keycloak 23.0.7 lista para desplegar en Railway con:
 
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/mSwigX?referralCode=AkM2z4)
+
 - Importación automática del realm `iasy-stock`.
 - Tema personalizado `iasystock` para las pantallas de autenticación.
 - Configuración base (`keycloak.conf`) afinada para entornos de desarrollo alojados.
