@@ -1,0 +1,709 @@
+{
+  "realm": "iasy-stock",
+  "displayName": "Iasy Stock Application Realm",
+  "displayNameHtml": "<div class=\"kc-logo-text\"><span>Iasy Stock</span></div>",
+  "enabled": true,
+  "sslRequired": "external",
+  "registrationAllowed": true,
+  "registrationEmailAsUsername": false,
+  "rememberMe": true,
+  "verifyEmail": false,
+  "loginWithEmailAllowed": true,
+  "duplicateEmailsAllowed": false,
+  "resetPasswordAllowed": true,
+  "editUsernameAllowed": false,
+  "bruteForceProtected": true,
+  "permanentLockout": false,
+  "maxFailureWaitSeconds": 900,
+  "minimumQuickLoginWaitSeconds": 60,
+  "waitIncrementSeconds": 60,
+  "quickLoginCheckMilliSeconds": 1000,
+  "maxDeltaTimeSeconds": 43200,
+  "failureFactor": 30,
+  "defaultRoles": ["offline_access", "uma_authorization"],
+  "requiredCredentials": ["password"],
+  "passwordPolicy": "length(8) and digits(1) and lowerCase(1) and upperCase(1) and specialChars(1)",
+  "otpPolicyType": "totp",
+  "otpPolicyAlgorithm": "HmacSHA1",
+  "otpPolicyInitialCounter": 0,
+  "otpPolicyDigits": 6,
+  "otpPolicyLookAheadWindow": 1,
+  "otpPolicyPeriod": 30,
+  "otpSupportedApplications": ["FreeOTP", "Google Authenticator"],
+  "webAuthnPolicyRpEntityName": "keycloak",
+  "webAuthnPolicySignatureAlgorithms": ["ES256"],
+  "webAuthnPolicyRpId": "",
+  "webAuthnPolicyAttestationConveyancePreference": "not specified",
+  "webAuthnPolicyAuthenticatorAttachment": "not specified",
+  "webAuthnPolicyRequireResidentKey": "not specified",
+  "webAuthnPolicyUserVerificationRequirement": "not specified",
+  "webAuthnPolicyCreateTimeout": 0,
+  "webAuthnPolicyAvoidSameAuthenticatorRegister": false,
+  "webAuthnPolicyAcceptableAaguids": [],
+  "webAuthnPolicyPasswordlessRpEntityName": "keycloak",
+  "webAuthnPolicyPasswordlessSignatureAlgorithms": ["ES256"],
+  "webAuthnPolicyPasswordlessRpId": "",
+  "webAuthnPolicyPasswordlessAttestationConveyancePreference": "not specified",
+  "webAuthnPolicyPasswordlessAuthenticatorAttachment": "not specified",
+  "webAuthnPolicyPasswordlessRequireResidentKey": "not specified",
+  "webAuthnPolicyPasswordlessUserVerificationRequirement": "not specified",
+  "webAuthnPolicyPasswordlessCreateTimeout": 0,
+  "webAuthnPolicyPasswordlessAvoidSameAuthenticatorRegister": false,
+  "webAuthnPolicyPasswordlessAcceptableAaguids": [],
+  "browserSecurityHeaders": {
+    "contentSecurityPolicyReportOnly": "",
+    "xContentTypeOptions": "nosniff",
+    "xRobotsTag": "none",
+    "xFrameOptions": "SAMEORIGIN",
+    "contentSecurityPolicy": "frame-src 'self'; frame-ancestors 'self'; object-src 'none';",
+    "xXSSProtection": "1; mode=block",
+    "strictTransportSecurity": "max-age=31536000; includeSubDomains"
+  },
+  "smtpServer": {},
+  "loginTheme": "iasystock",
+  "accountTheme": "keycloak",
+  "adminTheme": "keycloak",
+  "emailTheme": "keycloak",
+  "eventsEnabled": false,
+  "eventsListeners": [],
+  "enabledEventTypes": [],
+  "adminEventsEnabled": false,
+  "adminEventsDetailsEnabled": false,
+  "internationalizationEnabled": true,
+  "supportedLocales": ["es", "en"],
+  "defaultLocale": "es",
+  "browserFlow": "browser",
+  "registrationFlow": "registration",
+  "directGrantFlow": "direct grant",
+  "resetCredentialsFlow": "reset credentials",
+  "clientAuthenticationFlow": "clients",
+  "dockerAuthenticationFlow": "docker auth",
+  "attributes": {
+    "frontendUrl": "",
+    "adminEventsEnabled": "false",
+    "adminEventsDetailsEnabled": "false",
+    "eventsEnabled": "false",
+    "passwordPolicy": "length(8) and digits(1) and lowerCase(1) and upperCase(1) and specialChars(1)"
+  },
+  "keycloakVersion": "23.0.7",
+  "userManagedAccessAllowed": false,
+  "clientProfiles": {
+    "profiles": []
+  },
+  "clientPolicies": {
+    "policies": []
+  },
+  "clients": [
+    {
+      "id": "iasy-stock-flutter-client",
+      "clientId": "iasy-stock-flutter-client",
+      "name": "Iasy Stock Flutter Client",
+      "description": "Cliente público para Iasy Stock Flutter App con PKCE",
+      "rootUrl": "http://localhost:3000",
+      "adminUrl": "http://localhost:3000",
+      "baseUrl": "http://localhost:3000",
+      "surrogateAuthRequired": false,
+      "enabled": true,
+      "alwaysDisplayInConsole": false,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "",
+      "registrationAccessToken": "",
+      "defaultRoles": [],
+      "redirectUris": [
+        "com.iasystock.app://login-callback",
+        "com.iasystock.app://logout-callback",
+        "http://localhost:8088/*",
+        "http://localhost:8088/auth/callback",
+        "http://localhost:8088/login/callback",
+        "http://localhost:8088/logout/callback",
+        "http://127.0.0.1:8088/*",
+        "http://10.0.2.2:8088/*",
+        "http://localhost:3000/*",
+        "http://localhost:3000/auth/callback",
+        "http://localhost:3000/login",
+        "http://localhost:3000/login-callback",
+        "http://localhost:3001/*",
+        "http://localhost:3001/auth/callback",
+        "http://localhost:3001/logout/callback",
+        "https://localhost:8088/*",
+        "https://localhost:8088/auth/callback",
+        "https://app.iasystock.com/*",
+        "https://app.iasystock.com/auth/callback",
+        "https://app.iasystock.com/login/callback",
+        "https://app.iasystock.com/logout/callback",
+        "https://iasystock.com/*",
+        "https://iasystock.com/auth/callback",
+        "http://localhost:8089/*",
+        "https://localhost:8089/*",
+        "https://api.iasystock.com/*",
+        "https://api.iasystock.com/auth/callback"
+      ],
+      "webOrigins": [
+        "http://localhost:8088",
+        "https://localhost:8088",
+        "http://localhost:8089",
+        "https://localhost:8089",
+        "http://localhost:3000",
+        "https://localhost:3000",
+        "http://localhost:3001",
+        "https://localhost:3001",
+        "https://app.iasystock.com",
+        "https://iasystock.com",
+        "https://api.iasystock.com"
+      ],
+      "notBefore": 0,
+      "bearerOnly": false,
+      "consentRequired": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": true,
+      "serviceAccountsEnabled": false,
+      "publicClient": true,
+      "frontchannelLogout": false,
+      "protocol": "openid-connect",
+      "attributes": {
+        "pkce.code.challenge.method": "S256",
+        "oauth2.device.authorization.grant.enabled": "false",
+        "backchannel.logout.session.required": "true",
+        "post.logout.redirect.uris": "+",
+        "oauth2.device.polling.interval": "5",
+        "display.on.consent.screen": "false",
+        "backchannel.logout.revoke.offline.tokens": "false"
+      },
+      "authenticationFlowBindingOverrides": {},
+      "fullScopeAllowed": true,
+      "nodeReRegistrationTimeout": -1,
+      "defaultClientScopes": [
+        "openid",
+        "profile",
+        "email",
+        "web-origins",
+        "role_list",
+        "roles",
+        "inventory",
+        "sales",
+        "notifications"
+      ],
+      "optionalClientScopes": [
+        "address",
+        "phone",
+        "offline_access",
+        "microprofile-jwt",
+        "reports",
+        "audit"
+      ],
+      "access": {
+        "view": true,
+        "configure": true,
+        "manage": true
+      }
+    },
+    {
+      "id": "iasy-stock-api-client",
+      "clientId": "iasy-stock-api-client",
+      "name": "Iasy Stock API Client",
+      "description": "Cliente para Iasy Stock Spring Boot API",
+      "rootUrl": "http://localhost:8089",
+      "adminUrl": "http://localhost:8089",
+      "baseUrl": "http://localhost:8089",
+      "surrogateAuthRequired": false,
+      "enabled": true,
+      "alwaysDisplayInConsole": false,
+      "clientAuthenticatorType": "client-secret",
+      "secret": "iasy-stock-api-secret",
+      "registrationAccessToken": "",
+      "defaultRoles": [],
+      "redirectUris": [
+        "http://localhost:8089/*",
+        "https://localhost:8089/*"
+      ],
+      "webOrigins": [
+        "http://localhost:8089",
+        "https://localhost:8089"
+      ],
+      "notBefore": 0,
+      "bearerOnly": true,
+      "consentRequired": false,
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": true,
+      "serviceAccountsEnabled": true,
+      "publicClient": false,
+      "frontchannelLogout": false,
+      "protocol": "openid-connect",
+      "attributes": {
+        "oauth2.device.authorization.grant.enabled": "false",
+        "backchannel.logout.session.required": "true",
+        "post.logout.redirect.uris": "+",
+        "oauth2.device.polling.interval": "5",
+        "display.on.consent.screen": "false",
+        "backchannel.logout.revoke.offline.tokens": "false"
+      },
+      "authenticationFlowBindingOverrides": {},
+      "fullScopeAllowed": true,
+      "nodeReRegistrationTimeout": -1,
+      "defaultClientScopes": [
+        "openid",
+        "profile",
+        "email",
+        "web-origins",
+        "role_list",
+        "roles",
+        "inventory",
+        "sales",
+        "admin",
+        "audit"
+      ],
+      "optionalClientScopes": [
+        "address",
+        "phone",
+        "offline_access",
+        "microprofile-jwt",
+        "reports",
+        "notifications"
+      ],
+      "access": {
+        "view": true,
+        "configure": true,
+        "manage": true
+      }
+    }
+  ],
+  "clientScopes": [
+    {
+      "id": "iasy-openid-scope",
+      "name": "openid",
+      "description": "OpenID Connect scope",
+      "protocol": "openid-connect",
+      "attributes": {
+        "include.in.token.scope": "true",
+        "display.on.consent.screen": "false"
+      },
+      "protocolMappers": [
+        {
+          "id": "openid-sub-mapper",
+          "name": "sub",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-sub-mapper",
+          "consentRequired": false,
+          "config": {
+            "id.token.claim": "true",
+            "access.token.claim": "true"
+          }
+        }
+      ]
+    },
+    {
+      "id": "iasy-profile-scope",
+      "name": "profile",
+      "description": "OpenID Connect built-in scope: profile",
+      "protocol": "openid-connect",
+      "attributes": {
+        "include.in.token.scope": "true",
+        "display.on.consent.screen": "true",
+        "consent.screen.text": "${profileScopeConsentText}"
+      },
+      "protocolMappers": [
+        {
+          "id": "profile-username-mapper",
+          "name": "username",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usermodel-property-mapper",
+          "consentRequired": false,
+          "config": {
+            "userinfo.token.claim": "true",
+            "user.attribute": "username",
+            "id.token.claim": "true",
+            "access.token.claim": "true",
+            "claim.name": "preferred_username",
+            "jsonType.label": "String"
+          }
+        },
+        {
+          "id": "profile-given-name-mapper",
+          "name": "given name",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usermodel-property-mapper",
+          "consentRequired": false,
+          "config": {
+            "userinfo.token.claim": "true",
+            "user.attribute": "firstName",
+            "id.token.claim": "true",
+            "access.token.claim": "true",
+            "claim.name": "given_name",
+            "jsonType.label": "String"
+          }
+        },
+        {
+          "id": "profile-family-name-mapper",
+          "name": "family name",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usermodel-property-mapper",
+          "consentRequired": false,
+          "config": {
+            "userinfo.token.claim": "true",
+            "user.attribute": "lastName",
+            "id.token.claim": "true",
+            "access.token.claim": "true",
+            "claim.name": "family_name",
+            "jsonType.label": "String"
+          }
+        },
+        {
+          "id": "profile-full-name-mapper",
+          "name": "full name",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-full-name-mapper",
+          "consentRequired": false,
+          "config": {
+            "id.token.claim": "true",
+            "access.token.claim": "true",
+            "userinfo.token.claim": "true"
+          }
+        }
+      ]
+    },
+    {
+      "id": "iasy-email-scope",
+      "name": "email",
+      "description": "OpenID Connect built-in scope: email",
+      "protocol": "openid-connect",
+      "attributes": {
+        "include.in.token.scope": "true",
+        "display.on.consent.screen": "true",
+        "consent.screen.text": "${emailScopeConsentText}"
+      },
+      "protocolMappers": [
+        {
+          "id": "email-mapper",
+          "name": "email",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usermodel-property-mapper",
+          "consentRequired": false,
+          "config": {
+            "userinfo.token.claim": "true",
+            "user.attribute": "email",
+            "id.token.claim": "true",
+            "access.token.claim": "true",
+            "claim.name": "email",
+            "jsonType.label": "String"
+          }
+        },
+        {
+          "id": "email-verified-mapper",
+          "name": "email verified",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usermodel-property-mapper",
+          "consentRequired": false,
+          "config": {
+            "userinfo.token.claim": "true",
+            "user.attribute": "emailVerified",
+            "id.token.claim": "true",
+            "access.token.claim": "true",
+            "claim.name": "email_verified",
+            "jsonType.label": "boolean"
+          }
+        }
+      ]
+    },
+    {
+      "id": "iasy-web-origins-scope",
+      "name": "web-origins",
+      "description": "OpenID Connect scope for add allowed web origins to the access token",
+      "protocol": "openid-connect",
+      "attributes": {
+        "include.in.token.scope": "false",
+        "display.on.consent.screen": "false"
+      },
+      "protocolMappers": [
+        {
+          "id": "web-origins-mapper",
+          "name": "allowed web origins",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-allowed-origins-mapper",
+          "consentRequired": false,
+          "config": {}
+        }
+      ]
+    },
+    {
+      "id": "iasy-role-list-scope",
+      "name": "role_list",
+      "description": "SAML role list",
+      "protocol": "openid-connect",
+      "attributes": {
+        "include.in.token.scope": "false",
+        "display.on.consent.screen": "false"
+      },
+      "protocolMappers": [
+        {
+          "id": "role-list-mapper",
+          "name": "role list",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usermodel-realm-role-mapper",
+          "consentRequired": false,
+          "config": {
+            "user.attribute": "foo",
+            "access.token.claim": "true",
+            "claim.name": "realm_access.roles",
+            "jsonType.label": "String",
+            "multivalued": "true"
+          }
+        }
+      ]
+    },
+    {
+      "id": "iasy-roles-scope",
+      "name": "roles",
+      "description": "OpenID Connect scope for add user roles to the access token",
+      "protocol": "openid-connect",
+      "attributes": {
+        "include.in.token.scope": "true",
+        "display.on.consent.screen": "true",
+        "consent.screen.text": "${rolesScopeConsentText}"
+      },
+      "protocolMappers": [
+        {
+          "id": "iasy-roles-mapper",
+          "name": "roles",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usermodel-realm-role-mapper",
+          "consentRequired": false,
+          "config": {
+            "user.attribute": "foo",
+            "claim.name": "roles",
+            "jsonType.label": "String",
+            "multivalued": "true",
+            "id.token.claim": "true",
+            "access.token.claim": "true",
+            "userinfo.token.claim": "true"
+          }
+        },
+        {
+          "id": "iasy-client-roles-mapper",
+          "name": "client roles",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-usermodel-client-role-mapper",
+          "consentRequired": false,
+          "config": {
+            "user.attribute": "foo",
+            "claim.name": "resource_access.${client_id}.roles",
+            "jsonType.label": "String",
+            "multivalued": "true",
+            "id.token.claim": "true",
+            "access.token.claim": "true",
+            "userinfo.token.claim": "true"
+          }
+        }
+      ]
+    },
+    {
+      "id": "iasy-inventory-scope",
+      "name": "inventory",
+      "description": "Acceso a funcionalidades de gestión de inventario",
+      "protocol": "openid-connect",
+      "attributes": {
+        "include.in.token.scope": "true",
+        "display.on.consent.screen": "true",
+        "consent.screen.text": "Acceso a gestión de inventario y stock"
+      }
+    },
+    {
+      "id": "iasy-sales-scope",
+      "name": "sales",
+      "description": "Acceso a funcionalidades de ventas y transacciones",
+      "protocol": "openid-connect",
+      "attributes": {
+        "include.in.token.scope": "true",
+        "display.on.consent.screen": "true",
+        "consent.screen.text": "Acceso a gestión de ventas y transacciones"
+      }
+    },
+    {
+      "id": "iasy-reports-scope",
+      "name": "reports",
+      "description": "Acceso a reportes y análisis de datos",
+      "protocol": "openid-connect",
+      "attributes": {
+        "include.in.token.scope": "true",
+        "display.on.consent.screen": "true",
+        "consent.screen.text": "Acceso a reportes y análisis"
+      }
+    },
+    {
+      "id": "iasy-admin-scope",
+      "name": "admin",
+      "description": "Acceso completo a funciones administrativas",
+      "protocol": "openid-connect",
+      "attributes": {
+        "include.in.token.scope": "true",
+        "display.on.consent.screen": "true",
+        "consent.screen.text": "Acceso administrativo completo"
+      }
+    },
+    {
+      "id": "iasy-notifications-scope",
+      "name": "notifications",
+      "description": "Acceso a notificaciones y alertas del sistema",
+      "protocol": "openid-connect",
+      "attributes": {
+        "include.in.token.scope": "true",
+        "display.on.consent.screen": "true",
+        "consent.screen.text": "Acceso a notificaciones y alertas"
+      }
+    },
+    {
+      "id": "iasy-audit-scope",
+      "name": "audit",
+      "description": "Acceso a logs de auditoría y trazabilidad",
+      "protocol": "openid-connect",
+      "attributes": {
+        "include.in.token.scope": "true",
+        "display.on.consent.screen": "true",
+        "consent.screen.text": "Acceso a logs de auditoría"
+      }
+    }
+  ],
+  "roles": {
+    "realm": [
+      {
+        "id": "iasy-sudo-role",
+        "name": "sudo",
+        "description": "Super usuario con acceso completo a todo el sistema",
+        "composite": false,
+        "clientRole": false,
+        "containerId": "iasy-stock",
+        "attributes": {
+          "permissions": ["ALL"]
+        }
+      },
+      {
+        "id": "iasy-admin-role",
+        "name": "admin",
+        "description": "Administrador con acceso a ventas y stock",
+        "composite": false,
+        "clientRole": false,
+        "containerId": "iasy-stock",
+        "attributes": {
+          "permissions": ["SALES", "INVENTORY", "REPORTS"]
+        }
+      },
+      {
+        "id": "iasy-almacenista-role",
+        "name": "almacenista",
+        "description": "Almacenista con acceso a modificar stock e inventario",
+        "composite": false,
+        "clientRole": false,
+        "containerId": "iasy-stock",
+        "attributes": {
+          "permissions": ["INVENTORY", "STOCK_MANAGEMENT"]
+        }
+      },
+      {
+        "id": "iasy-ventas-role",
+        "name": "ventas",
+        "description": "Vendedor con acceso a operaciones de ventas",
+        "composite": false,
+        "clientRole": false,
+        "containerId": "iasy-stock",
+        "attributes": {
+          "permissions": ["SALES", "TRANSACTIONS"]
+        }
+      }
+    ]
+  },
+  "defaultDefaultClientScopes": [
+    "openid",
+    "profile",
+    "email",
+    "web-origins",
+    "role_list",
+    "roles"
+  ],
+  "defaultOptionalClientScopes": [
+    "offline_access",
+    "address",
+    "phone",
+    "microprofile-jwt",
+    "inventory",
+    "sales",
+    "reports",
+    "admin",
+    "notifications",
+    "audit"
+  ],
+  "users": [
+    {
+      "id": "test-sudo-user",
+      "username": "sudo",
+      "enabled": true,
+      "emailVerified": true,
+      "firstName": "Super",
+      "lastName": "Usuario",
+      "email": "sudo@iasystock.com",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "Sudo123!",
+          "temporary": false
+        }
+      ],
+      "realmRoles": ["sudo"],
+      "clientRoles": {}
+    },
+    {
+      "id": "test-admin-user",
+      "username": "admin",
+      "enabled": true,
+      "emailVerified": true,
+      "firstName": "Admin",
+      "lastName": "User",
+      "email": "admin@iasystock.com",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "Admin123!",
+          "temporary": false
+        }
+      ],
+      "realmRoles": ["admin"],
+      "clientRoles": {}
+    },
+    {
+      "id": "test-almacenista-user",
+      "username": "almacenista",
+      "enabled": true,
+      "emailVerified": true,
+      "firstName": "Almacenista",
+      "lastName": "User",
+      "email": "almacenista@iasystock.com",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "Almacenista123!",
+          "temporary": false
+        }
+      ],
+      "realmRoles": ["almacenista"],
+      "clientRoles": {}
+    },
+    {
+      "id": "test-ventas-user",
+      "username": "ventas",
+      "enabled": true,
+      "emailVerified": true,
+      "firstName": "Ventas",
+      "lastName": "User",
+      "email": "ventas@iasystock.com",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "Ventas123!",
+          "temporary": false
+        }
+      ],
+      "realmRoles": ["ventas"],
+      "clientRoles": {}
+    }
+  ]
+}

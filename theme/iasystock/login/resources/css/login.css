@@ -1,0 +1,324 @@
+/* iasystock theme for Keycloak login with theme selector */
+:root {
+  --color-primary: #086d99;
+  --color-primary-2: #1c87c9;
+  --bg-light: #F4F4F9;
+  --bg-dark: #1c1c2b;
+  --surface-light: #ffffff;
+  --surface-dark: #2a2a3d;
+  --text-primary-light: rgba(0,0,0,0.87);
+  --text-secondary-light: rgba(0,0,0,0.54);
+  --text-primary-dark: rgba(255,255,255,1);
+  --text-secondary-dark: rgba(255,255,255,0.7);
+  --title-light: #086d99;
+  --title-dark: #86C5D8;
+  --success: #4CAF50;
+  --warning: #FF9800;
+  --error: #F44336;
+  --info: #2196F3;
+  --password-icon-light: #424242;
+  --password-icon-dark: #86C5D8;
+}
+
+/* Theme selector */
+.theme-selector {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: var(--surface-light);
+  border: 2px solid var(--color-primary);
+  border-radius: 25px;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 2px 8px rgba(8, 109, 153, 0.2);
+}
+
+.theme-toggle {
+  background: transparent;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-size: 1.2rem;
+}
+
+.theme-toggle:hover {
+  background: rgba(8, 109, 153, 0.1);
+}
+
+.theme-toggle.active {
+  background: var(--color-primary);
+  color: white;
+}
+
+/* General page layout - Default Light Theme */
+body, body.light-theme {
+  background-color: var(--bg-light) !important;
+  color: var(--text-primary-light) !important;
+}
+
+/* Dark theme */
+body.dark-theme {
+  background-color: var(--bg-dark) !important;
+  color: var(--text-primary-dark) !important;
+}
+
+/* Header logo text - Make iasystock title more prominent */
+#kc-header .kc-logo-text, .kc-logo-text {
+  color: var(--color-primary) !important;
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  text-transform: lowercase !important;
+  letter-spacing: -0.02em !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* Page title (like "Acceder a tu cuenta") - Make it smaller than logo */
+#kc-page-title, #kc-header-wrapper {
+  color: var(--title-light) !important;
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 2rem !important;
+}
+
+/* Ensure proper hierarchy between brand name and page title */
+.kc-logo-text + #kc-page-title,
+#kc-header .kc-logo-text + #kc-page-title {
+  margin-top: 1rem !important;
+}
+
+/* Card surface - Enhanced styling to match Flutter app */
+.pf-c-login__main, .card-pf, .pf-c-form, .pf-c-login__main-body {
+  background: var(--surface-light) !important;
+  box-shadow: 0 4px 12px rgba(8, 109, 153, 0.08) !important;
+  border-radius: 12px !important;
+  padding: 2.5rem !important;
+  margin: 1rem !important;
+  border: 1px solid rgba(8, 109, 153, 0.08) !important;
+}
+
+/* Login container wrapper */
+.pf-c-login {
+  background: var(--bg-light) !important;
+  min-height: 100vh !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Primary button - Enhanced styling to match Flutter app */
+.pf-c-button.pf-m-primary, .btn-primary {
+  background-color: var(--color-primary) !important;
+  border-color: var(--color-primary) !important;
+  color: #ffffff !important;
+  border-radius: 8px !important;
+  padding: 0.75rem 1.5rem !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  transition: all 0.2s ease-in-out !important;
+  text-transform: none !important;
+  min-height: 48px !important;
+  box-shadow: 0 2px 4px rgba(8, 109, 153, 0.2) !important;
+}
+.pf-c-button.pf-m-primary:hover, .btn-primary:hover {
+  background-color: var(--color-primary-2) !important;
+  border-color: var(--color-primary-2) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 8px rgba(8, 109, 153, 0.3) !important;
+}
+.pf-c-button.pf-m-primary:active, .btn-primary:active {
+  transform: translateY(0) !important;
+  box-shadow: 0 2px 4px rgba(8, 109, 153, 0.2) !important;
+}
+
+/* Links - Enhanced styling for consistency */
+a, .pf-c-button.pf-m-link {
+  color: var(--color-primary) !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease-in-out !important;
+}
+a:hover, .pf-c-button.pf-m-link:hover {
+  color: var(--color-primary-2) !important;
+  text-decoration: underline !important;
+}
+
+/* Specific styling for login/register links */
+#kc-registration, #kc-registration a,
+.pf-c-login__main-footer-links a,
+.pf-c-login__main-footer-band a {
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  color: var(--color-primary) !important;
+}
+
+/* Input fields - Enhanced styling to match Flutter app */
+input, .pf-c-form-control, .pf-c-text-input-group__text-input {
+  color: var(--text-primary-light) !important;
+  background-color: var(--surface-light) !important;
+  border: 2px solid #E0E0E0 !important;
+  border-radius: 8px !important;
+  padding: 0.875rem 1rem !important;
+  font-size: 1rem !important;
+  min-height: 48px !important;
+  transition: all 0.2s ease-in-out !important;
+}
+::placeholder { 
+  color: var(--text-secondary-light) !important; 
+  font-weight: 400 !important;
+}
+input:focus, .pf-c-form-control:focus, .pf-c-text-input-group__text-input:focus {
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 0 0 3px rgba(8, 109, 153, 0.1) !important;
+  outline: none !important;
+}
+input:hover, .pf-c-form-control:hover, .pf-c-text-input-group__text-input:hover {
+  border-color: rgba(8, 109, 153, 0.3) !important;
+}
+label, .pf-c-form__label-text { 
+  color: var(--text-primary-light) !important;
+  font-weight: 600 !important;
+  font-size: 0.875rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* Remember me checkbox alignment */
+.pf-c-check, .pf-c-form__group-control .pf-c-check {
+  display: flex !important;
+  align-items: center !important;
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.pf-c-check__input {
+  margin-right: 0.5rem !important;
+  margin-top: 0 !important;
+  vertical-align: middle !important;
+}
+
+.pf-c-check__label {
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  color: var(--text-primary-light) !important;
+  margin: 0 !important;
+  line-height: 1.2 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* Dark theme checkbox styles */
+body.dark-theme .pf-c-check__label {
+  color: var(--text-primary-dark) !important;
+}
+
+/* Fix checkbox container alignment */
+#kc-form-login .pf-c-form__group:has(.pf-c-check),
+.pf-c-form__group:has(input[type="checkbox"]) {
+  margin-top: 1rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* Alerts */
+.pf-c-alert.pf-m-success { border-left: 4px solid var(--success); }
+.pf-c-alert.pf-m-warning { border-left: 4px solid var(--warning); }
+.pf-c-alert.pf-m-danger  { border-left: 4px solid var(--error); }
+.pf-c-alert.pf-m-info    { border-left: 4px solid var(--info); }
+
+/* Footer and subtle text */
+.pf-c-login__main-footer-links, .pf-c-form__helper-text {
+  color: var(--text-secondary-light) !important;
+}
+
+/* Selected navigation or active elements if rendered */
+.pf-m-current, .pf-m-selected { color: var(--color-primary) !important; }
+
+/* Locale dropdown: keep it closed by default, open only when toggled */
+#kc-locale .kc-dropdown-items,
+#kc-locale-dropdown .kc-dropdown-items,
+#kc-locale ul { display: none; }
+#kc-locale .kc-dropdown.kc-dropdown-open .kc-dropdown-items,
+#kc-locale-dropdown.kc-dropdown-open .kc-dropdown-items,
+#kc-locale.open ul { display: block; }
+#kc-locale a, #kc-locale button { color: var(--color-primary) !important; }
+
+/* Dark theme styles - Complete theme implementation */
+body.dark-theme .pf-c-login {
+  background: var(--bg-dark) !important;
+}
+
+body.dark-theme .pf-c-login__main, 
+body.dark-theme .card-pf, 
+body.dark-theme .pf-c-form, 
+body.dark-theme .pf-c-login__main-body {
+  background: var(--surface-dark) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+  border: 1px solid rgba(134, 197, 216, 0.1) !important;
+}
+
+body.dark-theme #kc-page-title, 
+body.dark-theme #kc-header-wrapper { 
+  color: var(--title-dark) !important; 
+}
+
+body.dark-theme .kc-logo-text {
+  color: var(--title-dark) !important;
+}
+
+body.dark-theme a, 
+body.dark-theme .pf-c-button.pf-m-link { 
+  color: var(--title-dark) !important; 
+}
+
+body.dark-theme #kc-registration, 
+body.dark-theme #kc-registration a,
+body.dark-theme .pf-c-login__main-footer-links a,
+body.dark-theme .pf-c-login__main-footer-band a {
+  color: var(--title-dark) !important;
+}
+
+body.dark-theme input, 
+body.dark-theme .pf-c-form-control, 
+body.dark-theme .pf-c-text-input-group__text-input { 
+  color: var(--text-primary-dark) !important; 
+  background-color: var(--surface-dark) !important;
+  border-color: rgba(134, 197, 216, 0.2) !important;
+}
+
+body.dark-theme input:focus, 
+body.dark-theme .pf-c-form-control:focus, 
+body.dark-theme .pf-c-text-input-group__text-input:focus {
+  border-color: var(--title-dark) !important;
+  box-shadow: 0 0 0 3px rgba(134, 197, 216, 0.1) !important;
+}
+
+body.dark-theme input:hover, 
+body.dark-theme .pf-c-form-control:hover, 
+body.dark-theme .pf-c-text-input-group__text-input:hover {
+  border-color: rgba(134, 197, 216, 0.3) !important;
+}
+
+body.dark-theme ::placeholder { 
+  color: var(--text-secondary-dark) !important; 
+}
+
+body.dark-theme label, 
+body.dark-theme .pf-c-form__label-text { 
+  color: var(--text-primary-dark) !important; 
+}
+
+body.dark-theme .pf-c-login__main-footer-links, 
+body.dark-theme .pf-c-form__helper-text {
+  color: var(--text-secondary-dark) !important;
+}
+
+body.dark-theme .theme-selector {
+  background: var(--surface-dark);
+  border-color: var(--title-dark);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
